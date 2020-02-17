@@ -1,0 +1,224 @@
+Para passar você precisa de nota mínima 6 tanto nos trabalhos, como nas provas
+NF = mínimo (EP, P) caso contrário
+EP = (EP1 + 2*EP2 + 2*EP3 + 3*EP4) / 8
+P = (P1 + 2*P2) / 3
+NF = (EP + P * 2) / 3
+
+Na última semana teremos uma Substitutiva, com a matéria toda
+Qualquer pessoa poderá fazer a Sub
+Não teremos exame no próximo semestre
+
+Material de Teoria dos Grafos (não cai na primeira prova): https://www.dropbox.com/s/9m1050m3xj6cgsw/ETG%20julho%202012.pdf?dl=0
+
+Slides Algoritmos em C: https://www.ime.usp.br/~pf/algoritmos-livro/slides/SLIDES-A-handout.pdf
+
+Códigos em C: 
+https://www.dropbox.com/s/86ibey5tlt5cd1m/ED.zip?dl=0
+
+Lista Exercícios Listas Encadeadas: https://www.dropbox.com/s/x5zu30d0hlf2fs1/Lista%20de%20Exerc%C3%ADcios%20Listas%20Encadeadas%20ED%202011-01.pdf?dl=0
+
+G = {1:['B'], 2:['A', 'B', 'E', 'F'], 3: ['A', 'B', 'C'], 4: ['B', 'E'],
+     5:['B', 'E', 'F']}
+while G: 
+  m = sorted(G, key=lambda x: len(G[x]))[0]
+  op = G[m][0]
+  print (m, op)
+  del G[m]
+  for máq in G:
+    if op in G[máq]: G[máq].remove(op)
+
+Download de bit.ly/CursoPyLadiesSP em c:\usuários\você
+pip install -r requirements.txt   (verifique se você instalou o python com a opção PATH habilitada, algumas bibliotecas não funcionam com python 3.8)
+jupyter notebook
+clicar no notebook ipynb do repositório que você baixou
+*ler* e executar célula por célula, fazendo também os exercícios
+
+Data de entrega do EP4: 01 de dezembro
+Data de apresentação na sala de aula: Turma B (27 e 28 de novembro) Turma A (25 e 26 de novembro)
+O que é para ser apresentado: repositório renderizado no github, deve incluir um README.MD com descrição e link para os Dados originais
+Vou fazer perguntas para os dois componentes da dupla
+TURMA B:
+Victor Machado -> Média de notas (matemática e redação) no enem por região.
+
+Ariana Cursino e Caroline Faria -> Mulheres na TI (alunas e docentes).
+
+Jonathan Deptulsqui e Ygor Melo > relação candidatos do ENEM x alunos que realizaram a prova
+
+Nathan Machado e Paulo Filipini > Relação dos cursos superiores mais procurados com o passar dos anos
+
+Felipe Carolino e Guilherme Migliano > Relação de escolas que possuem condições básicas de funcionamento (Energia, água e esgoto).
+
+Gabriel Augusto Landim e Nayara Lorrane --> Nível de prioridade que os professores consideram importante nos gastos  para investimentos em cada item no âmbito da educação.
+
+Érica Santos e Stephanie Costa --> Análise e Comparação de Dados de participantes dos Cursos Tecnólogos no ENADE 2017 (MODIFICADO)
+
+Barbara Gontijo -> Número de concluintes de acordo com os anos e sexo (modificado)
+
+Felippe Alves de Paula / Thyago Odorico ---- Quantidade de professores com idade menor 25 anos, nos anos de 2016, 2017 e 2018 (MODIFICADO)
+
+Pablo Gabriel  --> Percepção dos Alunos em relação a prova do Enade
+
+
+
+TURMA A:
+Gilberto Ferreira e Isabella Bragion > Os 5 cursos que mais foram aprovados para a concessão de bolsas em universidades particulares do Brasil. Quantidade de bolsas concedidas para cursos noturnos em comparação com demais períodos e cursos a distância. Dados PROUNI 2016.
+
+Cauane Andrade e Paulo Henrique Lourenço > Análise de dados de docentes e discentes de ensino superior brasileiro quanto à raça/cor, gênero e nível acadêmico.
+
+Rodrigo Marcelino Silva Amorim e Yasmin de Araújo Arantes - > Porcentagem de alunos deficientes que realizam o ENEM / idade média dos alunos que realizam o ENEM
+
+Leandro Gomes Pereira -> nivel academico por turno
+
+Celso Reis e Fernando Soares -->   A relação entre raça x turno dos alunos do ensino superior. Numero de obitos de alunos universitarios.
+
+Denis da Silva Soares de Assis --> Nota média no Enem com base no ano de conclusão do ensino médio / Quantidade de pessoas eliminadas na prova ENEM por região
+
+Vanessa Cordeiro e Thiago Luiz --> 
+
+Vitor Leandro Amorim --> Cursos oferecidos por região
+
+Douglas Kirchmaier Hurpia
+
+Caique Fernandes e Adrian Wesley ? Ensino superior no ano de 2018 (Quantidade de matrículas e cursos)
+
+Gustavo Robert e Rodrigo Querino --> Ensino Superior - quantidades de ingressantes  x quantidade de concluinte - regiões x tipo de escola que estudou 
+
+Anna Carolina e Roberta --> Em qual turno você realizou o estágio curricular obrigatório? ou Em que tipo de escola você cursou o ensino médio?
+
+Maximiliano > Média de idade dos alunos na Educação superior em 2018 divido por cor/raça e UF de origem.
+
+
+Resumo do Pandas: https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf
+
+Exemplo de leitura de apenas algumas colunas do arquivo de alunos de Educação Superior (para não estourar a memória, nomes dos campos no Dicionário de Dados)
+df = pd.read_csv(r'C:\Users\Aluno\Desktop\microdados_ed_superior_2018\dados\DM_ALUNO.csv', delimiter='|', encoding='iso-8859-1', usecols=['CO_CURSO', 'TP_COR_RACA', 'IN_DEFICIENCIA', 'TP_SEXO'])
+
+http://inep.gov.br/inep-data
+
+Para instalar tudo siga as instruções do README de https://github.com/fmasanori/CursoPyLadiesSP
+Resumo do Pandas: https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf
+
+EP1: entrega para 29-setembro (domingo)
+versão diferente dos semestre anteriores!
+https://www.dropbox.com/s/5wuwro4vvcyzdsn/Estrutura%20de%20Dados%20-%20EP01%20-%202019-2.pdf?dl=0
+
+EP2: entrega para 20 de outubro (domingo)
+https://www.dropbox.com/s/xfxu90mdbxneqf8/EP2.zip?dl=0
+
+Merlin.py
+https://www.dropbox.com/s/p3tk9jsibi63fj0/Merlin.py?dl=0
+
+EP3: entrega para 03 de novembro (domingo)
+https://www.dropbox.com/s/qwn0r74ovyhava9/Estrutura%20de%20Dados%20-%20EP03-1o%20semestre%202019.pdf?dl=0
+
+EP4 (01 de dezembro): Análise de Dados Públicos
+Informações bit.ly/pybrpandas e aqui (em baixo)
+Livro para Ciência de Dados Free:
+https://jakevdp.github.io/PythonDataScienceHandbook/
+Código do livro acima:
+https://github.com/jakevdp/PythonDataScienceHandbook
+
+Tutorial Ciência de Dados
+https://www.kaggle.com/kanncaa1/data-sciencetutorial-for-beginners
+
+A = [[0, 1, 0, 0, 0, 0], 
+     [0, 0, 1, 0, 0, 0],
+     [0, 0, 0, 0, 1, 0],
+     [0, 0, 1, 0, 1, 0],
+     [1, 0, 0, 0, 0, 0],
+     [0, 1, 0, 0, 0, 0]]
+
+def Distancias(n, origem):
+  d = [-1] * n
+  d[origem] = 0
+  f = []
+  f.append(origem)
+  while len(f) > 0:
+    x = f[0]
+    del f[0]
+    for y in range(n):
+      if A[x][y] == 1 and d[y] == -1:
+        d[y] = d[x] + 1
+        f.append(y)
+  return d
+print (Distancias(6, 3))
+
+def quicksort(lista):
+    if len(lista) <= 1: 
+        return lista
+    
+    pivô = lista[0]
+    iguais  = [x for x in lista if x == pivô]
+    menores = [x for x in lista if x <  pivô]
+    maiores = [x for x in lista if x >  pivô]
+    return quicksort(menores) + \
+           iguais + quicksort(maiores)
+
+print (quicksort([2, 7, 0, 3, 4, 9, 8, 1, 5, 6]))
+
+	
+def inserção(v):
+ for j in range(1, len(v)):
+   x = v[j]
+   i = j - 1
+   while i >= 0 and v[i] > x:
+     v[i + 1] = v[i]
+     i = i - 1
+   v[i + 1] = x
+ return v
+
+def seleção(v):
+  resp = []
+  while v:
+    m = min(v)
+    resp.append(m)
+    v.remove(m)
+  return resp
+
+print (inserção([3, 0, 1, 2, 5, 7, 6, 4]))
+print (seleção([3, 0, 1, 2, 5, 7, 6, 4]))
+
+def merge(e, d):
+    r = []
+    i, j = 0, 0
+    while i < len(e) and j < len(d):
+        if e[i] <= d[j]:
+            r.append(e[i])
+            i += 1
+        else:
+            r.append(d[j])
+            j += 1
+    r += e[i:]
+    r += d[j:]
+    return r
+
+def mergesort(v):
+    if len(v) <= 1:
+        return v
+    else:
+        m = len(v) // 2
+        e = mergesort(v[:m])
+        d = mergesort(v[m:])
+        return merge(e, d)
+
+print (mergesort([3, 4, 8, 0, 6, 7, 4, 2, 1, 9, 4, 5]))
+
+Dicas de vizualizações: https://towardsdatascience.com/5-quick-and-easy-data-visualizations-in-python-with-code-a2284bae952f
+
+Colinha:
+bit.ly/pybrpandas
+
+Trabalho em dupla para a nota do 2o bimestre:
+
+Procurar no Google cheat sheet pandas
+
+https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf 
+
+https://www.kaggle.com/
+DATASUS Tabnet
+Transparencia.gov.br
+dados.gov.br
+brasil.io/datasets
+http://www.transparencia.df.gov.br/#/servidores/remuneracao
+http://www.ssp.sp.gov.br/transparenciassp/
+
