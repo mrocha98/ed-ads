@@ -1,0 +1,23 @@
+{
+  "name": "estrutura-de-dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrocha98/estrutura-de-dados.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrocha98/estrutura-de-dados/issues"
+  },
+  "homepage": "https://github.com/mrocha98/estrutura-de-dados#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
