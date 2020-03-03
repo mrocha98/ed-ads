@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 typedef struct cel
 {
     int val;
@@ -21,7 +20,7 @@ void imprime(Celula *p) {
     printf("\n\n");
 }
 
-// ex.4
+// ex.4 - forma iterativa
 int menor(Celula *p) {
     int menor = p->prox->val;
     for (Celula *aux = p->prox; aux != NULL; aux = aux->prox) {
@@ -29,6 +28,19 @@ int menor(Celula *p) {
             menor = aux->val;
     }
     return menor;
+}
+
+// ex.4 - forma recursiva
+int menorRecursivo(Celula *p, int menor) { //menor == primeiro valor da lista
+  Celula *aux = p;
+  if(aux->prox == NULL) { //valida se é a última celula
+    if(aux->val < menor) //valida se o valor dela é menor que o último menor encontrado
+      return aux->val; //retorna o valor dela
+    return menor; //caso contrário, retorna o último menor encontrado
+  }
+  if(aux->prox->val < menor)
+    return menorRecursivo(aux->prox, aux->prox->val);
+  return menorRecursivo(aux->prox, menor);
 }
 
 // ex.13
@@ -41,35 +53,62 @@ void concatenaListas(Celula *p, Celula *q) {
 }
 
 // ex.9
-void converteVetorParaLista() {
+Celula* converteVetorParaLista(int v[], int len) {
+  Celula cabeca;
+  cabeca.prox = NULL;
+  Celula *lst = &cabeca;
+  //int *p = v;
+  for(int i = len-1; i >= 0 ; i--) {
+    Celula *nova = malloc(sizeof(Celula));
+    nova->val = v[i];//*(p--);//*(p-i);
+    nova->prox = lst->prox;
+    lst->prox = nova;
+  }
+  return lst;
+}
 
+//ex. 18
+void libera(Celula *p) {
+  Celula *temp = p; 
+  Celula *aux = p->prox;
+  temp->prox = NULL; //deixa a cabeça sem um campo próximo
+
+  while(aux != NULL) {
+      temp = aux;
+      aux = aux->prox;
+      temp->prox = NULL;
+      free(temp);
+  }
+}
+
+//ex. 19
+void inverte(Celula *head) {
+  /*Celula *atual = head->prox;
+  Celula *ultimoAnalisado = atual;
+  head->prox = head->prox->prox;
+*/
 }
 
 int main(void) {
-    Celula cabeca1;
+    Celula cabeca1, cabeca2;
     cabeca1.prox = NULL;
-    Celula *lst1 = &cabeca1;
-    aloca(10, lst1);
-    aloca(11, lst1);
-    aloca(12, lst1);
-    aloca(13, lst1);
-    aloca(14, lst1);
-    aloca(15, lst1);
-
-    Celula cabeca2;
     cabeca2.prox = NULL;
+    Celula *lst1 = &cabeca1;
     Celula *lst2 = &cabeca2;
-    aloca(100, lst2);
-    aloca(200, lst2);
-    aloca(300, lst2);
-    aloca(400, lst2);
-    aloca(500, lst2);
-    aloca(600, lst2);
+    for(int i = 10, j = 100; i <= 15 && j <= 600; i++, j+=100) {
+      aloca(i, lst1);
+      aloca(j, lst2);
+    }
+    
+    libera(lst1);
+    libera(lst2);
 
-    concatenaListas(lst1, lst2);
-    imprime(lst1);
-    imprime(lst2);
-
-    system("pause");
+    #if defined(WIN32) || defined(WIN64)
+      system("pause");
+    #else
+      printf("fim da execução, pressione enter para sair....\n");
+      getchar();
+    #endif
+    
     return 0;
 }
