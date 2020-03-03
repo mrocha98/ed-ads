@@ -56,7 +56,52 @@ Existem, na média, casos bons e ruins
     - número menor que todos à esquerda
 
 Faça você: 
-3 7 5 4 2 1 0 6
-7 6 5 2 4 3 1 0
-7 6 5 4 3 2 1 0
-0 1 2 3 4 5 6 7
+[ 3 7 5 4 2 1 0 6 ]
+[ 7 6 5 2 4 3 1 0 ]
+[ 7 6 5 4 3 2 1 0 ]
+[ 0 1 2 3 4 5 6 7 ]
+
+1)
+
+3 5 7 (5 empurra 7)
+3 4 5 7 (4 empurra 5 7)
+2 3 4 5 7 (2 empurra todos)
+1 2 3 4 5 7 (1 empurra todos)
+0 1 2 3 4 5 7 (0 empurra todos)
+0 1 2 3 4 5 6 7 (6 empurra apenas o 7)
+
+2) 
+
+7
+6 7 (6 empurra 7)
+5 6 7 (5 empurra 6 7)
+2 5 6 7 (2 empurra todos)
+2 4 5 6 7 (4 empurra 6 7)
+2 3 4 5 6 7 (3 empurra 4 5 6 7)
+1 2 3 4 5 6 7 (1 empurra todos)
+0 1 2 3 4 5 6 7 (0 empurra todos)
+
+3)
+
+7
+6 7
+5 6 7
+4 5 6 7
+3 4 5 6 7
+2 3 4 5 6 7
+1 2 3 4 5 6 7
+0 1 2 3 4 5 6 7 (cada novo empurra todos)
+                (n ** 2 passos)
+
+
+4)
+
+0
+0 1
+0 1 2
+0 1 2 3
+0 1 2 3 4
+0 1 2 3 4 5
+0 1 2 3 4 5 6
+0 1 2 3 4 5 6 7 (não empurro ninguém)
+                (apenas n passos)
