@@ -85,8 +85,16 @@ Teste de mesa para: [7, 3, 6, 4, 2, 5, 1, 0]:
 
 Seleção gasta n passos para percorrer todo mundo, cada passo demora todos à direita, no primeiro percorro n elementos.
 Logo gasto n * n ou n ** 2 passos no pior caso, porém seleção não tem caso médio, sempre é o pior.
+Como procuro o menor do lado direita, do qual não sei nada, ssempre percorro todos, ao contrário de inserção que vej o lado esquerdo conhecido (está em odem), vantagem de ter um DADO a mais. Por isso na média, inserção é melhor que seleção.
 
 
+#### Análise
+CONCEITO: Análise leva em conta caso pior e também caso médio.
+Mais para frente vamos comparar dois algoritmos *muito* ruins
+1. vê todos os subconjuntos, isto é 2**n elementos
+2. vê todas as permutações, isto é n! elementos
+
+2**n é muito, muito menor que n!
 
 
 
