@@ -96,6 +96,51 @@ Mais para frente vamos comparar dois algoritmos *muito* ruins
 
 2**n é muito, muito menor que n!
 
+INSERÇÃO E SELEÇÃO no pior caso são n**2 passos, no caso médio inserção é melhor, pois usa um DADO a mais, lado esquerdo ordenado.
 
+Vamos ver agora algoritmos melhores
 
+### MERGESORT
 
+merge === misturar
+
+Se eu tenho dois vetores em ordem crescente, posso misturar para um terceiro vetor em ordem.
+Analogia: duas fileiras de crianças em ordem de altura, vou vendo a criança menor que estpa na frente de cada fila, e passo para trás.
+
+FILA 1: 21 15 7 3 2 (2 3 7 15 21)
+FILA 2: 42 22 9 4 0 (0 4 9 22 42)
+FILA ORDENADA: 
+0 (0 < 2)
+0 2 (2 < 4)
+0 2 3 (3 < 4)
+0 2 3 4 (4 < 7)
+0 2 3 4 7 (7 < 9)
+0 2 3 4 7 9 15 (15 < 21)
+0 2 3 4 7 9 15 21 (21 < 22)
+0 2 3 4 7 9 15 21 22 (22 < 42)
+0 2 3 4 7 9 15 21 22 42 (sobrou 42)
+
+FILA 1: 1 2 4 6
+FILA 2: 0 3 5 7
+0 (0 < 1)
+0 1 (1 < 2)
+0 1 2 (2 < 3)
+0 1 2 3 (3 < 4)
+0 1 2 3 4 (4 < 5)
+0 1 2 3 4 5 (5 < 6)
+0 1 2 3 4 5 6 (6 < 7)
+0 1 2 3 4 5 6 7 (sobrou 7)
+
+Sei que erge funciona para dois vetores ordenados, como ordeno todos?
+Divido o vetor em 2
+Divido cada metade em 2
+Até chegar em tamanho <= 1
+Vetor com 0 ou 1 elemento está em ordem, então posso juntar dois vetores de tamanho 1 e voltar até a origem
+6412 3750 (2 vetores de 4)
+64 12 37 50 (4 vetores de 2)
+6 4 1 2 3 7 5 0 (8 vetores de 1)
+46 12 37 05 (4 duplas em ordem)
+1246 0357 (2 quadruplas em ordem)
+01234567 (original em ordem)
+
+abrir mergesort.py
