@@ -144,3 +144,7 @@ Vetor com 0 ou 1 elemento está em ordem, então posso juntar dois vetores de ta
 01234567 (original em ordem)
 
 abrir mergesort.py
+divido em 2 metades até chegar em tamanho 1, igual busca binária
+logo chego em log(n, 2) passos até o tamanho 1
+cada merge verifica todos = n passos
+Como faço um merge para cada recursão, tenho log(n , 2) * n total
